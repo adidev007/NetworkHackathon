@@ -4,5 +4,6 @@
   become: yes
 
   tasks:
+  module_defaults:
     - ios_facts:
       gather_subset: all
