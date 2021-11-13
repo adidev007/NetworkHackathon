@@ -1,10 +1,7 @@
 ---
 - name: task a
   hosts: rtr1
-  tasks:
-     - name: connect rtr1
-       command: "ssh rtr1"
-       
+  tasks:  
      - name: show ip route
        command: "show ip route"
        
