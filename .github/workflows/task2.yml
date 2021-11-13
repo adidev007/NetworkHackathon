@@ -1,0 +1,15 @@
+---
+- hosts: app
+  name: RBAC on command execution
+  become: yes
+
+  tasks:
+    - name: show ip interface details
+      package:
+        name: show
+        state: present
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
