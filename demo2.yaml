@@ -1,7 +1,9 @@
 ---
 - hosts: rtr1
-  gather_facts: True
-  gather_subset: interfaces
-  module_defaults:
-    cisco.ios.ios_facts:
-      gather_network_resources: interfaces
+  name: show network details
+  become: yes
+
+  tasks:
+    - name: show details
+    - ios_facts:
+    gather_subset: all
