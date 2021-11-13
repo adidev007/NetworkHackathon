@@ -1,7 +1,9 @@
 ---
 - name: task a
   hosts: rtr1
-  group: cisco
+  ansible_connection: network_cli
+  ansible_network_os: ios
+  ansible_user: ec2-user
   tasks:
      - name: connect rtr1
        command: "ssh rtr1"
