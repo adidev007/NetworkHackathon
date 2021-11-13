@@ -1,15 +1,15 @@
 ---
+- hosts: web
+  name: Install the apache web service
+  become: yes
 
-- name: Network Getting Started First Playbook
-  connection: ansible.netcommon.network_cli
-  gather_facts: false
-  hosts: all
   tasks:
+    - name: install apache
+      package:
+        name: httpd
+        state: present
 
-    - name: Get config for VyOS devices
-      vyos.vyos.vyos_facts:
-        gather_subset: all
-
-    - name: Display the config
-      debug:
-        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
