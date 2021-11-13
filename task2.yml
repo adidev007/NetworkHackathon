@@ -1,6 +1,6 @@
 ---
 - name: task a
-  hosts: all
+  hosts: rtr1
   tasks:
      - name: show ip route
        command: "show ip route"
